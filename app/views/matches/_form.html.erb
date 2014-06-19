@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :team1_id %><br>
-    <%= f.number_field :team1_id %>
+    <%= f.collection_select(:team1_id, Team.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :team2_id %><br>
-    <%= f.number_field :team2_id %>
+    <%= f.collection_select(:team2_id, Team.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :match_date %><br>
