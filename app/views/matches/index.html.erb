@@ -15,8 +15,8 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= match.team1_id %></td>
-        <td><%= match.team2_id %></td>
+        <td><%= Team.find(match.team1_id).name %></td>
+        <td><%= Team.find(match.team2_id).name %></td>
         <td><%= match.match_date %></td>
         <td><%= match.score1 %></td>
         <td><%= match.score2 %></td>

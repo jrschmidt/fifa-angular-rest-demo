@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Team1:</strong>
-  <%= @match.team1_id %>
+  <%= Team.find(@match.team1_id).name %>
 </p>
 
 <p>
   <strong>Team2:</strong>
-  <%= @match.team2_id %>
+  <%= Team.find(@match.team2_id).name %>
 </p>
 
 <p>
