@@ -7,4 +7,6 @@
 
 @fifa.config ($routeProvider) ->
   $routeProvider.
-    otherwise( {templateUrl: 'home.html', controller: 'FifaCtrl'} )
+    otherwise( {
+      templateUrl: 'ngtemplates/home.html',
+      controller: 'FifaCtrl'} )
