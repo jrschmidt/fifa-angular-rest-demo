@@ -1,6 +1,6 @@
 # app/assets/javascripts/fifa.coffee
 
-@fifa = angular.module 'fifa', ['ngRoute']
+@fifa = angular.module 'fifa', ['ngRoute', 'ngResource', 'ng-rails-csrf']
 
 @fifa.controller 'FifaCtrl', ($scope) ->
   $scope.test_message = "*** CONTROLLER TEST MESSAGE ***"
