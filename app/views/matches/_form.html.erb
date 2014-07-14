@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :team1_id %><br>
-    <%= f.collection_select(:team1_id, Team.all, :id, :name) %>
-  </div>
-  <div class="field">
-    <%= f.label :team2_id %><br>
-    <%= f.collection_select(:team2_id, Team.all, :id, :name) %>
-  </div>
-  <div class="field">
     <%= f.label :match_date %><br>
     <%= f.date_select :match_date %>
   </div>
   <div class="field">
+    <%= f.label :team1_id %><br>
+    <%= f.collection_select(:team1_id, Team.all, :id, :name) %>
+  </div>
+  <div class="field">
     <%= f.label :score1 %><br>
     <%= f.number_field :score1 %>
+  </div>
+  <div class="field">
+    <%= f.label :team2_id %><br>
+    <%= f.collection_select(:team2_id, Team.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :score2 %><br>
