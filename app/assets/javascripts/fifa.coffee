@@ -13,6 +13,8 @@
     {id: "@id"},
     {create: {method: "POST"} } )
 
+  $scope.teams = $scope.teams_resource.query()
+
 @fifa.config ($routeProvider) ->
   $routeProvider.
     otherwise( {
