@@ -5,7 +5,11 @@
   <h5>Angular template: public/home.html</h5>
 
   <div ng-controller="TeamsCtrl">
-    {{test_message}}
+
+    <div ng-repeat="team in teams">
+      {{team.name}}
+    </div>
+
   </div>
 
 </div>
