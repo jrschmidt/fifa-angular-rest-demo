@@ -1,0 +1,17 @@
+<!-- public/ngtemplates/home.html -->
+
+<div>
+
+  <h5>Angular template: public/teams.html</h5>
+
+  <!-- <div ng-controller="TeamsCtrl"> -->
+  <div>
+
+    <div ng-repeat="team in teams">
+      {{team.name}}
+      <div ng-include="matches/{{team.id}}"></div
+    </div>
+
+  </div>
+
+</div>
