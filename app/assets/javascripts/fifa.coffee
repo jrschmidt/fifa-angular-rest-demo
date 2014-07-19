@@ -27,9 +27,6 @@
 
   $scope.matches = $scope.matches_resource.query()
 
-  $scope.all_matches_for_team = (tid) ->
-    # return match for match in matches when ((match.team1 == tid) || (match.team2 == tid))
-    return match.team1 == tid || match.team2 == tid
 
 @fifa.config ($routeProvider) ->
   $routeProvider

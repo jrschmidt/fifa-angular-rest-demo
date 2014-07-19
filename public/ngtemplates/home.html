@@ -2,15 +2,21 @@
 
 <h5>Angular template: public/home.html</h5>
 
+</br>
+
+<h3>FIFA 2014 World Cup - MATCHES</h3>
+
   <div ng-repeat="team in teams">
-    {{team.name}}
+    <strong>{{team.name}}</strong>
 
     <div ng-repeat="match in matches" ng-show="{{(match.team1_id == team.id) || (match.team2_id == team.id)}}">
-      {{match.match_date}}
+      {{match.match_date | date:"dd MMM yyyy"}}
       {{teams[match.team1_id-1].name}}
       {{match.score1}}
       {{teams[match.team2_id-1].name}}
       {{match.score2}}
     </div>
+
+    </br>
 
   </div>
