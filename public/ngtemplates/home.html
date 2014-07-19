@@ -4,12 +4,13 @@
 
   <div ng-repeat="team in teams">
     {{team.name}}
-  </div>
 
-  <div ng-repeat="match in matches">
-    {{match.match_date}}
-    {{match.team1_id}}
-    {{match.score1}}
-    {{match.team2_id}}
-    {{match.score2}}
+    <div ng-repeat="match in matches" ng-show="{{(match.team1_id == team.id) || (match.team2_id == team.id)}}">
+      {{match.match_date}}
+      {{match.team1_id}}
+      {{match.score1}}
+      {{match.team2_id}}
+      {{match.score2}}
+    </div>
+
   </div>

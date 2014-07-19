@@ -6,6 +6,10 @@
 @fifa.constant "match_url", "http://localhost:3000/matches/"
 
 
+@fifa.filter "any_match", (all_matches,team_id) ->
+  return m for m in all_matches where (m.team1 == team_id or m.team2 == team_id)
+
+
 @fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
   $scope.test_message = "*** CONTROLLER TEST MESSAGE (Fifa) ***"
 
@@ -23,6 +27,9 @@
 
   $scope.matches = $scope.matches_resource.query()
 
+  $scope.all_matches_for_team = (tid) ->
+    # return match for match in matches when ((match.team1 == tid) || (match.team2 == tid))
+    return match.team1 == tid || match.team2 == tid
 
 @fifa.config ($routeProvider) ->
   $routeProvider
