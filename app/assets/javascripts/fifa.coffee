@@ -9,6 +9,8 @@
 @fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
   $scope.test_message = "*** CONTROLLER TEST MESSAGE (Fifa) ***"
 
+  $scope.edit = {match: "no"}
+
   $scope.teams_resource = $resource(
     team_url + ":id" + ".json",
     {id: "@id"},
