@@ -7,6 +7,8 @@
 
 
 @fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
+  console.log "testing console.log method from controller FifaCtrl"
+
   $scope.test_message = "*** CONTROLLER TEST MESSAGE (Fifa) ***"
 
   $scope.teams_resource = $resource(
@@ -23,12 +25,21 @@
 
   $scope.matches = $scope.matches_resource.query()
 
-  test_match = {
-    team1_id: 1,
-    team2_id: 32,
-    match_date: "1984-01-01" }
+  $scope.new_match = {}
 
-  $scope.matches_resource.save(test_match)
+  $scope.create_match = (match_data) ->
+    console.log "Trying to save match data ..."
+    $scope.matches_resource.save(match_data)
+
+  $scope.test_options = ["north", "south", "east", "west"]
+
+
+  # test_match = {
+  #   team1_id: 1,
+  #   team2_id: 32,
+  #   match_date: "1984-01-01" }
+
+  # $scope.matches_resource.save(test_match)
 
 
 @fifa.config ($routeProvider) ->

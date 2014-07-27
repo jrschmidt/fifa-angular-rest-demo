@@ -6,6 +6,16 @@
 
 <h3>FIFA 2014 World Cup - MATCHES</h3>
 
+<form name="new_match_form">
+  Use this format: <em>2014-07-04</em><br>
+  <input name="match_date" ng-model="new_match.match_date"/>
+  <select name="team1_id" ng-model="new_match.team1_id" ng-options="team.id as team.name for team in teams">
+  </select>
+  <select name="team2_id" ng-model="new_match.team2_id" ng-options="team.id as team.name for team in teams">
+  </select>
+  <button ng-click="create_match(new_match)">create match</button>
+</form>
+
 <div ng-repeat="team in teams">
   <strong>{{team.name}}</strong>
 
