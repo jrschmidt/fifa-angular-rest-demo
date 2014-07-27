@@ -9,8 +9,6 @@
 @fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
   $scope.test_message = "*** CONTROLLER TEST MESSAGE (Fifa) ***"
 
-  $scope.edit = {match: "no"}
-
   $scope.teams_resource = $resource(
     team_url + ":id" + ".json",
     {id: "@id"},
@@ -24,6 +22,13 @@
     {create: {method: "POST"} } )
 
   $scope.matches = $scope.matches_resource.query()
+
+  test_match = {
+    team1_id: 1,
+    team2_id: 32,
+    match_date: "1984-01-01" }
+
+  $scope.matches_resource.save(test_match)
 
 
 @fifa.config ($routeProvider) ->
