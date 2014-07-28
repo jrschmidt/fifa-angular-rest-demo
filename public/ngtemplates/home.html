@@ -10,20 +10,29 @@
 <form name="new_match_form">
   <p>
     <strong>Date</strong>
-    <input name="match_date" ng-model="new_match.match_date"/>
-    Use this format: <em>2014-07-04</em><br>
+    <input
+      name="match_date"
+      ng-model="new_match.match_date"/>
+    Use this format: <em>2014-07-04</em>
   </p>
   <p>
     <strong>Team 1</strong>
-    <select name="team1_id" ng-model="new_match.team1_id" ng-options="team.id as team.name for team in teams">
+    <select
+      name="team1_id"
+      ng-model="new_match.team1_id"
+      ng-options="team.id as team.name for team in teams">
     </select>
   </p>
   <p>
     <strong>Team 2</strong>
-    <select name="team2_id" ng-model="new_match.team2_id" ng-options="team.id as team.name for team in teams">
+    <select name="team2_id"
+      ng-model="new_match.team2_id"
+      ng-options="team.id as team.name for team in teams">
     </select>
   </p>
-  <button ng-click="create_match(new_match)">create match</button>
+  <button ng-click="create_match(new_match)">
+    create match
+  </button>
 </form>
 
 <br><br>
