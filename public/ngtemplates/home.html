@@ -7,25 +7,23 @@
 <br>
 
 <strong><em>Create New Match</em></strong>
-<form name="new_match_form">
+<form>
   <p>
     <strong>Date</strong>
     <input
-      name="match_date"
       ng-model="new_match.match_date"/>
     Use this format: <em>2014-07-04</em>
   </p>
   <p>
     <strong>Team 1</strong>
     <select
-      name="team1_id"
       ng-model="new_match.team1_id"
       ng-options="team.id as team.name for team in teams">
     </select>
   </p>
   <p>
     <strong>Team 2</strong>
-    <select name="team2_id"
+    <select
       ng-model="new_match.team2_id"
       ng-options="team.id as team.name for team in teams">
     </select>
