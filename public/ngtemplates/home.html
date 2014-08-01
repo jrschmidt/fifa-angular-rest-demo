@@ -48,6 +48,10 @@
       /
       {{teams[match.team2_id-1].name}}
       {{match.score2}}
+
+      <span ng-show="match.score2 == null">
+        ** score not defined
+      </span>
     </div>
 
     <div ng-show="{{match.team2_id == team.id}}">
@@ -58,6 +62,10 @@
       /
       {{teams[match.team2_id-1].name | uppercase}}
       {{match.score2}}
+
+      <span ng-show="match.score2 == null">
+        ** score not defined
+      </span>
     </div>
 
   </div>

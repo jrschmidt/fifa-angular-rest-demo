@@ -27,6 +27,15 @@
   $scope.create_match = (match_data) ->
     $scope.matches_resource.save(match_data)
 
+  $scope.update_match = (match_data) ->
+    $scope.matches_resource.save(match_data)
+
+  # $scope.has_score = (match) ->
+  #   if match.score2.toString().length > 0
+  #     return true
+  #   else
+  #     return false
+
 
 @fifa.config ($routeProvider) ->
   $routeProvider
