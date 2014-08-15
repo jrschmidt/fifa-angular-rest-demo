@@ -51,19 +51,21 @@
 
       <span ng-show="match.score2 == null">
         <form>
-          <strong>score</strong>
-          Team 1
+          <strong>Input score:</strong>
+          {{teams[match.team1_id-1].name}}
           <input
             type="number"
             min="0"
             max="99"
+            placeholder="0"
             ng_model="match.score1" />
           /
-          Team 2
+          {{teams[match.team2_id-1].name}}
           <input
             type="number"
             min="0"
             max="99"
+            placeholder="0"
             ng_model="match.score2" />
         </form>
       </span>
@@ -78,24 +80,26 @@
       {{teams[match.team2_id-1].name | uppercase}}
       {{match.score2}}
 
-<span ng-show="match.score2 == null">
-  <form>
-    <strong>score</strong>
-    Team 1
-    <input
-      type="number"
-      min="0"
-      max="99"
-      ng_model="match.score1" />
-    /
-    Team 2
-    <input
-      type="number"
-      min="0"
-      max="99"
-      ng_model="match.score2" />
-  </form>
-</span>
+      <span ng-show="match.score2 == null">
+        <form>
+          <strong>score</strong>
+          {{teams[match.team1_id-1].name}}
+          <input
+            type="number"
+            min="0"
+            max="99"
+            placeholder="0"
+            ng_model="match.score1" />
+          /
+          {{teams[match.team2_id-1].name}}
+          <input
+            type="number"
+            min="0"
+            max="99"
+            placeholder="0"
+            ng_model="match.score2" />
+        </form>
+      </span>
     </div>
 
   </div>
