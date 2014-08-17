@@ -58,7 +58,7 @@
             min="0"
             max="99"
             placeholder="0"
-            ng_model="match.score1" />
+            ng_model="score.s1" />
           /
           {{teams[match.team2_id-1].name}}
           <input
@@ -66,7 +66,10 @@
             min="0"
             max="99"
             placeholder="0"
-            ng_model="match.score2" />
+            ng_model="score.s2" />
+          <button ng-click="create_match(new_match)">
+            submit score
+          </button>
         </form>
       </span>
     </div>
@@ -89,7 +92,7 @@
             min="0"
             max="99"
             placeholder="0"
-            ng_model="match.score1" />
+            ng_model="score.s3" />
           /
           {{teams[match.team2_id-1].name}}
           <input
@@ -97,7 +100,10 @@
             min="0"
             max="99"
             placeholder="0"
-            ng_model="match.score2" />
+            ng_model="score.s4" />
+          <button ng-click="create_match(new_match)">
+            submit score
+          </button>
         </form>
       </span>
     </div>

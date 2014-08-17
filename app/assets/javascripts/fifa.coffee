@@ -26,10 +26,20 @@
     score1: -1
     score2: -1 }
 
+  $scope.score = {}
+
   $scope.create_match = (match_data) ->
     $scope.matches_resource.save(match_data)
 
   $scope.update_match = (match_data) ->
+    if $scope.score.s1 >= 0
+      console.log "SET 1"
+      match_data.score1 = $scope.score.s1
+      match_data.score2 = $scope.score.s2
+    else
+      console.log "SET 2"
+      match_data.score1 = $scope.score.s3
+      match_data.score2 = $scope.score.s4
     $scope.matches_resource.save(match_data)
 
 
