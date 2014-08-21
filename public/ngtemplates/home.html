@@ -57,17 +57,17 @@
             type="number"
             min="0"
             max="99"
-            placeholder="0"
-            ng_model="score.s1" />
+            placeholder="0" />
+            <!-- ng_model="score.s1" /> -->
           /
           {{teams[match.team2_id-1].name}}
           <input
             type="number"
             min="0"
             max="99"
-            placeholder="0"
-            ng_model="score.s2" />
-          <button ng-click="create_match(new_match)">
+            placeholder="0" />
+            <!-- ng_model="score.s2" /> -->
+          <button ng-click="update_match(match, score.s1, score.s2)">
             submit score
           </button>
         </form>
@@ -91,17 +91,17 @@
             type="number"
             min="0"
             max="99"
-            placeholder="0"
-            ng_model="score.s3" />
+            placeholder="0" />
+            <!-- ng_model="score.s3" /> -->
           /
           {{teams[match.team2_id-1].name}}
           <input
             type="number"
             min="0"
             max="99"
-            placeholder="0"
-            ng_model="score.s4" />
-          <button ng-click="create_match(new_match)">
+            placeholder="0" />
+            <!-- ng_model="score.s4" /> -->
+          <button ng-click="update_match(match, score.s3, score.s4)">
             submit score
           </button>
         </form>
