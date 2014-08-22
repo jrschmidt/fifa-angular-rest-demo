@@ -35,21 +35,38 @@
 
 <br><br>
 
+<div ng-repeat="match in matches">
+  <span ng-show="match.score1 < 0">
+    NO SCORE:
+    ( match.score1 = {{match.score1}} )
+    {{match.match_date}}
+    {{teams[match.team1_id-1].name}}
+    /
+    {{teams[match.team2_id-1].name}}
+  </span>
+</div>
+
+<br><br>
+
 <div ng-repeat="team in teams">
   <strong>{{team.name}}</strong>
 
   <div ng-repeat="match in matches">
 
     <div ng-show="{{match.team1_id == team.id}}">
-      {{match.match_date | date:"dd MMM yyyy"}}
-      :
-      {{teams[match.team1_id-1].name | uppercase}}
-      <span ng-show="match.score1 >= 0">{{match.score1}}</span>
-      /
-      {{teams[match.team2_id-1].name}}
-      <span ng-show="match.score2 >= 0">{{match.score2}}</span>
+      <span ng-show="match.score1 >= 0">
+        {{match.match_date | date:"dd MMM yyyy"}}
+        :
+        {{teams[match.team1_id-1].name | uppercase}}
+        {{match.score1}}
+        /
+        {{teams[match.team2_id-1].name}}
+        {{match.score2}}
+      </span>
 
-      <span ng-show="match.score1 == -1">
+
+      <!-- <span ng-show="match.score1 == -1">
+        {{match.match_date | date:"dd MMM yyyy"}}
         <form>
           <strong>Input score:</strong>
           {{teams[match.team1_id-1].name}}
@@ -57,24 +74,36 @@
             type="number"
             min="0"
             max="99"
-            placeholder="0" />
-            <!-- ng_model="score.s1" /> -->
+            placeholder="0"
+            ng_model="match.score1" />
           /
           {{teams[match.team2_id-1].name}}
           <input
             type="number"
             min="0"
             max="99"
-            placeholder="0" />
-            <!-- ng_model="score.s2" /> -->
-          <button ng-click="update_match(match, score.s1, score.s2)">
+            placeholder="0"
+            ng_model="match.score2" />
+          <button ng-click="update_match(match)">
             submit score
           </button>
         </form>
-      </span>
+      </span> -->
     </div>
 
     <div ng-show="{{match.team2_id == team.id}}">
+      <span ng-show="match.score2 >= 0">
+        {{match.match_date | date:"dd MMM yyyy"}}
+        :
+        {{teams[match.team1_id-1].name}}
+        {{match.score1}}
+        /
+        {{teams[match.team2_id-1].name | uppercase}}
+        {{match.score2}}
+      </span>
+    </div>
+
+    <!-- <div ng-show="{{match.team2_id == team.id}}">
       {{match.match_date | date:"dd MMM yyyy"}}
       :
       {{teams[match.team1_id-1].name}}
@@ -91,22 +120,22 @@
             type="number"
             min="0"
             max="99"
-            placeholder="0" />
-            <!-- ng_model="score.s3" /> -->
+            placeholder="0"
+            ng_model="score.s3" />
           /
           {{teams[match.team2_id-1].name}}
           <input
             type="number"
             min="0"
             max="99"
-            placeholder="0" />
-            <!-- ng_model="score.s4" /> -->
+            placeholder="0"
+            ng_model="score.s4" />
           <button ng-click="update_match(match, score.s3, score.s4)">
             submit score
           </button>
         </form>
       </span>
-    </div>
+    </div> -->
 
   </div>
   <br>
