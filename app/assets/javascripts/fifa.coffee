@@ -5,13 +5,6 @@
 @fifa.constant "team_url", "http://localhost:3000/teams/"
 @fifa.constant "match_url", "http://localhost:3000/matches/"
 
-# @fifa.filter "scoreless", (matches) ->
-#   return (matches) ->
-#     return match for match in matches when match.score1 < 0
-
-# @fifa.filter "scoreless", ( (matches) ->
-#   return match for match in matches when match.score1 < 0 )
-
 @fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
 
   $scope.teams_resource = $resource(
@@ -24,19 +17,11 @@
   $scope.matches_resource = $resource(
     match_url + ":id" + ".json",
     {id: "@id"},
-    {create: {method: "POST"} } )
-
-  # $scope.matches = $scope.matches_resource.query()
-  # console.log "  $scope.matches.length = #{$scope.matches.length}"
+    {create: {method: "POST"}, update: {method: "PUT"} } )
 
   $scope.matches_resource.query (matches) ->
     $scope.matches = matches
-    console.log "  $scope.matches.length = #{$scope.matches.length}"
-
-  # $scope.scoreless = match for match in $scope.matches when match.score1 < 0
-  # console.log "$scope.scoreless"
-  # console.log "  length = #{$scope.scoreless.length}"
-  # console.log "  #{mm.match_date}" for mm in $scope.scoreless
+    $scope.scoreless = ( match for match in $scope.matches when match.score1 < 0 )
 
   $scope.new_match = {
     score1: -1
@@ -60,15 +45,7 @@
     $scope.matches_resource.save(match_data)
 
   $scope.update_match = (match_data) ->
-    # if $scope.score.s1 >= 0
-    #   console.log "SET 1"
-    #   match_data.score1 = $scope.score.s1
-    #   match_data.score2 = $scope.score.s2
-    # else
-    #   console.log "SET 2"
-    #   match_data.score1 = $scope.score.s3
-    #   match_data.score2 = $scope.score.s4
-    $scope.matches_resource.save(match_data)
+    $scope.matches_resource.update(match_data)
 
 
 @fifa.config ($routeProvider) ->
