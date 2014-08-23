@@ -26,8 +26,12 @@
     {id: "@id"},
     {create: {method: "POST"} } )
 
-  $scope.matches = $scope.matches_resource.query()
-  console.log "  $scope.matches.length = #{$scope.matches.length}"
+  # $scope.matches = $scope.matches_resource.query()
+  # console.log "  $scope.matches.length = #{$scope.matches.length}"
+
+  $scope.matches_resource.query (matches) ->
+    $scope.matches = matches
+    console.log "  $scope.matches.length = #{$scope.matches.length}"
 
   # $scope.scoreless = match for match in $scope.matches when match.score1 < 0
   # console.log "$scope.scoreless"
