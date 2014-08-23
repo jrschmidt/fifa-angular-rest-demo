@@ -40,6 +40,18 @@
 
   $scope.score = {}
 
+  $scope.score_values = [
+    {n: 0, str: "0"},
+    {n: 1, str: "1"},
+    {n: 2, str: "2"},
+    {n: 3, str: "3"},
+    {n: 4, str: "4"},
+    {n: 5, str: "5"},
+    {n: 6, str: "6"},
+    {n: 7, str: "7"},
+    {n: 8, str: "8"},
+    {n: 9, str: "9"} ]
+
   $scope.create_match = (match_data) ->
     $scope.matches_resource.save(match_data)
 
