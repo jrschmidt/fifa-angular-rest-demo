@@ -27,8 +27,6 @@
     score1: -1
     score2: -1 }
 
-  $scope.score = {}
-
   $scope.score_values = [
     {n: 0, str: "0"},
     {n: 1, str: "1"},
