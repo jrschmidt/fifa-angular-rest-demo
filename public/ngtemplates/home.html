@@ -42,13 +42,13 @@
     {{teams[match.team1_id-1].name}}
     <select
       ng_model="match.score1"
-      ng-options="num.n as num.str for num in score_values" >
+      ng-options="num.n as num.str for num in score_form_values" >
     </select>
     /
     {{teams[match.team2_id-1].name}}
     <select
       ng_model="match.score2"
-      ng-options="num.n as num.str for num in score_values" >
+      ng-options="num.n as num.str for num in score_form_values" >
     </select>
     <button ng-click="update_match(match)">
       submit score
