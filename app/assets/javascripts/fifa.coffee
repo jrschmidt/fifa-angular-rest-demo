@@ -1,20 +1,17 @@
 # app/assets/javascripts/fifa.coffee
 
 # @fifa = angular.module 'fifa', ['ngRoute', 'ngResource', 'ng-rails-csrf']
-@fifa = angular.module 'fifa', ['ngRoute', 'ngResource', 'ng-rails-csrf']
+@fifa = angular.module 'fifa', ['ngRoute', 'ng-rails-csrf', 'restangular']
 
-# @fifa.constant "team_url", "http://localhost:3000/teams/"
-# @fifa.constant "match_url", "http://localhost:3000/matches/"
 
-# @fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
-@fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
+@fifa.constant "base_url", "http://localhost:3000/"
 
-  # $scope.teams_resource = $resource(
-  #   team_url + ":id" + ".json",
-  #   {id: "@id"},
-  #   {create: {method: "POST"} } )
-  #
-  # $scope.teams = $scope.teams_resource.query()
+@fifa.controller 'FifaCtrl', ($scope, $http, Restangular) ->
+
+  $scope.teams = Restangular.all("teams").getList().$object
+
+
+
   #
   # $scope.matches_resource = $resource(
   #   match_url + ":id" + ".json",
@@ -23,7 +20,7 @@
   #
   # $scope.matches_resource.query (matches) ->
   #   $scope.matches = matches
-    $scope.scoreless = ( match for match in $scope.matches when match.score1 < 0 )
+  #   $scope.scoreless = ( match for match in $scope.matches when match.score1 < 0 )
 
   $scope.new_match = {
     score1: -1
@@ -59,3 +56,16 @@
     .otherwise( {
       templateUrl: 'ngtemplates/home.html',
       controller: 'FifaCtrl'} )
+
+
+
+
+    *** *** NG-RESOURCE CODE REPLACED BY RESTANGULAR *** ***
+
+
+# $scope.teams_resource = $resource(
+#   team_url + ":id" + ".json",
+#   {id: "@id"},
+#   {create: {method: "POST"} } )
+#
+# $scope.teams = $scope.teams_resource.query()
