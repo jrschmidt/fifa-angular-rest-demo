@@ -1,26 +1,28 @@
 # app/assets/javascripts/fifa.coffee
 
+# @fifa = angular.module 'fifa', ['ngRoute', 'ngResource', 'ng-rails-csrf']
 @fifa = angular.module 'fifa', ['ngRoute', 'ngResource', 'ng-rails-csrf']
 
-@fifa.constant "team_url", "http://localhost:3000/teams/"
-@fifa.constant "match_url", "http://localhost:3000/matches/"
+# @fifa.constant "team_url", "http://localhost:3000/teams/"
+# @fifa.constant "match_url", "http://localhost:3000/matches/"
 
+# @fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
 @fifa.controller 'FifaCtrl', ($scope, $http, $resource, team_url, match_url) ->
 
-  $scope.teams_resource = $resource(
-    team_url + ":id" + ".json",
-    {id: "@id"},
-    {create: {method: "POST"} } )
-
-  $scope.teams = $scope.teams_resource.query()
-
-  $scope.matches_resource = $resource(
-    match_url + ":id" + ".json",
-    {id: "@id"},
-    {create: {method: "POST"}, update: {method: "PUT"} } )
-
-  $scope.matches_resource.query (matches) ->
-    $scope.matches = matches
+  # $scope.teams_resource = $resource(
+  #   team_url + ":id" + ".json",
+  #   {id: "@id"},
+  #   {create: {method: "POST"} } )
+  #
+  # $scope.teams = $scope.teams_resource.query()
+  #
+  # $scope.matches_resource = $resource(
+  #   match_url + ":id" + ".json",
+  #   {id: "@id"},
+  #   {create: {method: "POST"}, update: {method: "PUT"} } )
+  #
+  # $scope.matches_resource.query (matches) ->
+  #   $scope.matches = matches
     $scope.scoreless = ( match for match in $scope.matches when match.score1 < 0 )
 
   $scope.new_match = {
@@ -40,9 +42,11 @@
     {n: 9, str: "9"} ]
 
   $scope.create_match = (match_data) ->
+    # $scope.matches_resource.save(match_data)
     $scope.matches_resource.save(match_data)
 
   $scope.update_match = (match_data) ->
+    # $scope.matches_resource.update(match_data)
     $scope.matches_resource.update(match_data)
 
 
