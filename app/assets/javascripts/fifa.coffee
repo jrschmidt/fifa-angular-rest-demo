@@ -1,6 +1,5 @@
 # app/assets/javascripts/fifa.coffee
 
-# @fifa = angular.module 'fifa', ['ngRoute', 'ngResource', 'ng-rails-csrf']
 @fifa = angular.module 'fifa', ['ngRoute', 'ng-rails-csrf', 'restangular']
 
 
