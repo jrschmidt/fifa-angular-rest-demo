@@ -9,6 +9,8 @@
 
   $scope.teams = Restangular.all("teams").getList().$object
 
+  $scope.matches = Restangular.all("matches").getList().$object
+
 
 
   #
@@ -59,7 +61,7 @@
 
 
 
-    *** *** NG-RESOURCE CODE REPLACED BY RESTANGULAR *** ***
+    # *** *** NG-RESOURCE CODE REPLACED BY RESTANGULAR *** ***
 
 
 # $scope.teams_resource = $resource(
