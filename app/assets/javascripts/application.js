@@ -1,8 +1,8 @@
-//= require jquery
-//= require jquery_ujs
-
 //= require angular
 //= require ng-rails-csrf
-//= require angular-resource
+
+//= require lodash
+//= require restangular
+
 //= require angular-route
 //= require fifa
